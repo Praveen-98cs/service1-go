@@ -1,0 +1,27 @@
+openapi: "3.0.0"
+info:
+  title: Service1
+  version: 1.0.0
+paths:
+  /service1:
+    get:
+      summary: Forward request to echo service
+      description: Forwards a GET request to the configured backend service (SERVICE2_URL) passing along the x-request-id header
+      tags:
+        - proxy
+      parameters:
+        - name: x-request-id
+          in: header
+          description: Request ID to forward to the backend service
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response from backend service
+          content:
+            application/json:
+              schema:
+                type: object
+        '502':
+          description: Backend service unavailable

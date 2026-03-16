@@ -1,3 +1,3 @@
 module service1-go
 
-go 1.23.4
+go 1.19
