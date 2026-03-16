@@ -13,10 +13,7 @@ func main() {
 		log.Fatal("SERVICE2_URL environment variable is required")
 	}
 
-	port := os.Getenv("PORT")
-	if port == "" {
-		port = "9090"
-	}
+	port := "9090"
 
 	log.Printf("Starting service1...")
 	log.Printf("SERVICE2_URL: %s", service2URL)
